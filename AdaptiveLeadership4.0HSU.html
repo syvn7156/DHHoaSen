@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Học Adaptive Leadership 4.0 - Lãnh Đạo Thích Ứng | Đại Học Hoa Sen</title>
+    <meta name="description" content="Khóa học Adaptive Leadership 4.0 dành cho lãnh đạo. Ứng dụng AI Google Ecosystem để ra quyết định và quản trị thay đổi. Sáng học chiều áp dụng ngay với bộ Kit Template độc quyền.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hsu: {
+                            blue: '#003366', // Màu xanh đặc trưng HSU
+                            gold: '#D4AF37',
+                            light: '#f3f4f6'
+                        },
+                        google: {
+                            blue: '#4285F4',
+                            red: '#DB4437',
+                            yellow: '#F4B400',
+                            green: '#0F9D58'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #4285F4, #DB4437, #F4B400, #0F9D58);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tech-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 51, 102, 0.2);
+        }
+        .ai-kit-card {
+            border-left: 4px solid #0F9D58;
+            background-color: #f0fdf4;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom animation for the floating UI elements */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Logo Placeholder -->
+                <div class="text-2xl font-bold text-hsu-blue flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap"></i> HOA SEN UNIVERSITY
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+                <a href="#about" class="hover:text-hsu-blue transition">Thách Thức VUCA</a>
+                <a href="#program" class="hover:text-hsu-blue transition">Chương Trình</a>
+                <a href="#usp" class="hover:text-hsu-blue transition text-google-red font-bold">Quà Tặng AI Kit</a>
+                <a href="#register" class="bg-hsu-blue text-white px-6 py-2 rounded-full hover:bg-blue-800 transition shadow-lg transform hover:-translate-y-0.5">Đăng Ký Ngay</a>
+            </div>
+            <button class="md:hidden text-2xl text-hsu-blue" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4">
+            <a href="#about" class="block text-gray-700">Thách thức VUCA</a>
+            <a href="#program" class="block text-gray-700">Chương Trình</a>
+            <a href="#usp" class="block text-google-red font-bold">AI Kit Là Gì?</a>
+            <a href="#register" class="block bg-hsu-blue text-white text-center py-2 rounded">Đăng Ký Ngay</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 -z-10 opacity-10">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-hsu-blue fill-current">
+                <path d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.6,32.2C59,42.9,47.1,51.4,34.7,59.3C22.3,67.2,9.4,74.5,-2.7,79.2C-14.8,83.9,-26.1,86,-37.2,82.4C-48.3,78.8,-59.2,69.5,-68.6,58.2C-78,46.9,-85.9,33.6,-88.4,19.3C-90.9,5,-88,-10.3,-80.7,-23.4C-73.4,-36.5,-61.7,-47.4,-49.2,-55.3C-36.7,-63.2,-23.4,-68.1,-9.8,-66.4C3.8,-64.7,17.6,-56.4,30.5,-83.6L44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 space-y-6">
+                <div class="inline-block bg-blue-50 text-hsu-blue px-4 py-1.5 rounded-full font-bold text-sm border border-blue-100">
+                    <i class="fa-solid fa-chart-line mr-2"></i> Khóa học Lãnh đạo Thực chiến Sau Đại học
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-hsu-blue leading-tight">
+                    ADAPTIVE LEADERSHIP 4.0 <br>
+                    <span class="gradient-text">LÃNH ĐẠO THÍCH ỨNG</span> <br>
+                    TRONG THỜI ĐẠI BIẾN ĐỘNG
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Đừng ra quyết định bằng cảm tính. Hãy sở hữu 
+                    <span class="font-bold text-gray-800">"Người tham mưu ảo"</span> 
+                    để nhìn thấy điểm mù, dự báo rủi ro và quản trị đội ngũ linh hoạt.
+                    <br>Tất cả trong Hệ sinh thái Google.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#register" class="bg-hsu-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-800 transition shadow-xl text-center flex items-center justify-center gap-2">
+                        Đăng Ký Tư Vấn <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#program" class="bg-white text-hsu-blue border-2 border-hsu-blue px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition text-center">
+                        Xem Nội Dung Chi Tiết
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500 italic mt-2"><i class="fa-solid fa-check text-green-500 mr-1"></i> Tặng kèm bộ Kit Decision Matrix AI & App Employee Voice</p>
+            </div>
+            
+            <div class="md:w-1/2 mt-12 md:mt-0 relative">
+                <!-- Abstract UI Representation -->
+                <div class="relative bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 z-10 max-w-md mx-auto animate-float">
+                    <div class="flex items-center gap-2 mb-4 border-b pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-auto text-xs font-mono text-gray-400">Decision_Matrix_AI.gs</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                            <div class="bg-red-500 text-white w-10 h-10 rounded flex items-center justify-center"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div>
+                                <div class="text-sm font-bold text-gray-800">Risk Detected (VUCA)</div>
+                                <div class="text-xs text-gray-500">Gemini: "Kịch bản xấu nhất: Doanh thu giảm 20%..."</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <div class="bg-blue-600 text-white w-10 h-10 rounded flex items-center justify-center"><i class="fa-solid fa-brain"></i></div>
+                            <div>
+                                <div class="text-sm font-bold text-hsu-blue">Decision Helper</div>
+                                <div class="text-xs text-gray-500">Đã chấm điểm 3 phương án. Gợi ý: Phương án B.</div>
+                            </div>
+                        </div>
+                         <div class="flex items-center gap-4 bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                            <div class="bg-green-500 text-white w-10 h-10 rounded flex items-center justify-center"><i class="fa-solid fa-users"></i></div>
+                            <div>
+                                <div class="text-sm font-bold text-green-700">Team Pulse (AppSheet)</div>
+                                <div class="text-xs text-gray-500">Phát hiện 2 nhân sự đang phản đối ngầm.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-hsu-blue text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
+                        <i class="fa-solid fa-bolt text-yellow-400 mr-1"></i> Sáng học - Chiều dùng
+                    </div>
+                </div>
+                
+                <!-- Decorative Blobs -->
+                <div class="absolute top-10 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                <div class="absolute top-10 right-10 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINT & USP -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-hsu-blue mb-4">Lãnh Đạo Trong Bối Cảnh VUCA</h2>
+                <p class="text-gray-500">Thế giới biến động (Volatility), Bất định (Uncertainty), Phức tạp (Complexity) và Mơ hồ (Ambiguity).</p>
+                <div class="grid md:grid-cols-3 gap-6 text-left mt-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500 hover:shadow-md transition">
+                        <h3 class="font-bold text-lg mb-2 text-red-600"><i class="fa-solid fa-eye-slash mr-2"></i>Điểm Mù Ra Quyết Định</h3>
+                        <p class="text-sm text-gray-600">Bạn thường ra quyết định dựa trên kinh nghiệm cũ, nhưng thị trường đã thay đổi. Bạn sợ rủi ro vì thiếu dữ liệu dự báo.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-yellow-500 hover:shadow-md transition">
+                        <h3 class="font-bold text-lg mb-2 text-yellow-600"><i class="fa-solid fa-anchor mr-2"></i>Đội Ngũ "Ì Ạch"</h3>
+                        <p class="text-sm text-gray-600">Bạn muốn đổi mới, nhưng nhân viên kháng cự thay đổi. Văn hóa doanh nghiệp cứng nhắc khiến tổ chức chậm thích nghi.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-500 hover:shadow-md transition">
+                        <h3 class="font-bold text-lg mb-2 text-blue-600"><i class="fa-solid fa-compass mr-2"></i>Mất Phương Hướng</h3>
+                        <p class="text-sm text-gray-600">Thông tin quá nhiều nhưng không biết đâu là tín hiệu (signal), đâu là nhiễu (noise) để điều chỉnh chiến lược kịp thời.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE UNIQUE SELLING POINT -->
+            <div id="usp" class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-google-green text-white px-6 py-2 rounded-bl-xl font-bold z-10">
+                    ĐỘC QUYỀN TẠI HSU
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold text-hsu-blue mb-4">USP: "AI-DRIVEN LEADERSHIP" <br><span class="text-google-blue">Lãnh Đạo Dựa Trên Dữ Liệu</span></h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            Không lý thuyết sáo rỗng. Chúng tôi trang bị cho bạn bộ công cụ <strong>"Tham mưu số"</strong> để nhìn xa hơn và đi nhanh hơn. Tất cả đều nằm trong hệ sinh thái Google (Sheets, AppSheet, Gemini, Looker) - bảo mật và sẵn sàng triển khai.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-800">Bộ Kit Dựng Sẵn (Ready-to-use)</strong>
+                                    <span class="text-sm text-gray-500">File Sheets chấm điểm rủi ro, App lắng nghe nhân viên... copy về là dùng ngay.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-800">Thực Chiến Tại Lớp</strong>
+                                    <span class="text-sm text-gray-500">Sáng học tư duy, chiều dùng AI giải quyết case study thực tế của chính công ty bạn.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-800">Loại Bỏ Cảm Tính</strong>
+                                    <span class="text-sm text-gray-500">Dùng thuật toán để hỗ trợ trực giác lãnh đạo.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg text-center border hover:border-google-blue transition group">
+                                <div class="text-4xl mb-2 group-hover:scale-110 transition">📊</div>
+                                <div class="font-bold text-gray-700">Decision Matrix AI</div>
+                                <div class="text-xs text-gray-500">Tự động chấm điểm phương án</div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center border hover:border-google-blue transition group">
+                                <div class="text-4xl mb-2 group-hover:scale-110 transition">🤖</div>
+                                <div class="font-bold text-gray-700">Gemini Devil's Advocate</div>
+                                <div class="text-xs text-gray-500">AI phản biện chiến lược</div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center border hover:border-google-blue transition group">
+                                <div class="text-4xl mb-2 group-hover:scale-110 transition">📱</div>
+                                <div class="font-bold text-gray-700">App Voice of Employee</div>
+                                <div class="text-xs text-gray-500">Lắng nghe & Thấu cảm</div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center border hover:border-google-blue transition group">
+                                <div class="text-4xl mb-2 group-hover:scale-110 transition">🎯</div>
+                                <div class="font-bold text-gray-700">VUCA Radar</div>
+                                <div class="text-xs text-gray-500">Quét & Dự báo rủi ro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRICULUM SECTION -->
+    <section id="program" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-hsu-blue font-bold tracking-wider uppercase text-sm">Lộ trình 3 Ngày Chuyên Sâu</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">Nội Dung Khóa Học</h2>
+                <p class="text-gray-500 mt-4">Từ Tư duy "Lãnh đạo Thích ứng" đến Công cụ AI Quản trị Thay đổi</p>
+            </div>
+
+            <div class="space-y-8 max-w-5xl mx-auto">
+                <!-- Day 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="bg-hsu-blue text-white px-6 py-4 flex justify-between items-center flex-wrap gap-2">
+                        <h3 class="text-xl font-bold flex items-center"><i class="fa-solid fa-brain mr-2"></i> Ngày 1: Tư Duy Lãnh Đạo Thích Ứng (Adaptive Mindset)</h3>
+                        <span class="text-sm bg-white/20 px-3 py-1 rounded-full">Mindset Shift</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                        <div class="md:w-3/5 space-y-4">
+                            <h4 class="font-bold text-gray-800 border-b pb-2">Nội dung chuyên đề:</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Dịch chuyển từ "Lãnh đạo kiểm soát" sang "Lãnh đạo thích ứng".</li>
+                                <li>• <strong>AI đóng vai "Người phản biện" (Devil's Advocate):</strong> Thách thức các tư duy lối mòn cũ của lãnh đạo.</li>
+                                <li>• Cập nhật xu hướng: Dùng AI tóm tắt Market Intelligence theo thời gian thực.</li>
+                            </ul>
+                            <div class="bg-blue-50 p-3 rounded text-sm text-blue-800">
+                                <strong>Giá trị:</strong> Mở rộng góc nhìn, thoát khỏi bẫy kinh nghiệm cũ, nắm bắt xu hướng nhanh chóng.
+                            </div>
+                        </div>
+                        <div class="md:w-2/5">
+                            <div class="ai-kit-card p-5 rounded-lg h-full flex flex-col justify-center">
+                                <div class="text-green-600 font-bold mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-gift"></i> AI KIT MANG VỀ:
+                                </div>
+                                <ul class="space-y-3 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Prompt "The Devil's Advocate":</strong> Yêu cầu AI chỉ trích/tìm lỗ hổng trong kế hoạch của bạn.</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Template "VUCA Radar":</strong> Google Docs tích hợp khung phân tích VUCA, AI gợi ý giải pháp thích ứng ngay lập tức.</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Dataset "Case Study":</strong> Dữ liệu mẫu về khủng hoảng để thực hành phân tích.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="bg-hsu-blue text-white px-6 py-4 flex justify-between items-center flex-wrap gap-2">
+                        <h3 class="text-xl font-bold flex items-center"><i class="fa-solid fa-gavel mr-2"></i> Ngày 2: Quản Trị Thay Đổi & Ra Quyết Định Chiến Lược</h3>
+                        <span class="text-sm bg-white/20 px-3 py-1 rounded-full">Decision Making</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                        <div class="md:w-3/5 space-y-4">
+                            <h4 class="font-bold text-gray-800 border-b pb-2">Nội dung chuyên đề:</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• <strong>Mô phỏng kịch bản (Scenario Planning):</strong> Tạo 3-5 kịch bản tương lai (tốt/xấu) trong vài phút.</li>
+                                <li>• <strong>Ra quyết định không cảm tính:</strong> Loại bỏ thiên kiến nhận thức (Cognitive Bias) bằng dữ liệu.</li>
+                                <li>• Truyền thông thay đổi (Change Communication) hiệu quả.</li>
+                            </ul>
+                             <div class="bg-blue-50 p-3 rounded text-sm text-blue-800">
+                                <strong>Giá trị:</strong> Nhìn thấy tương lai giả định, giảm thiểu rủi ro khi ra quyết định lớn.
+                            </div>
+                        </div>
+                        <div class="md:w-2/5">
+                            <div class="ai-kit-card p-5 rounded-lg h-full flex flex-col justify-center">
+                                <div class="text-green-600 font-bold mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-gift"></i> AI KIT MANG VỀ:
+                                </div>
+                                <ul class="space-y-3 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Tool "Decision Matrix AI":</strong> File Google Sheets tự động chấm điểm và phân tích rủi ro các lựa chọn.</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Script "Pre-mortem Analysis":</strong> Prompt giúp lãnh đạo tưởng tượng "Dự án đã thất bại" để phòng ngừa từ đầu.</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Template "Change Communication":</strong> Mẫu Email/Memo thông báo thay đổi khéo léo do AI soạn.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                    <div class="bg-hsu-blue text-white px-6 py-4 flex justify-between items-center flex-wrap gap-2">
+                        <h3 class="text-xl font-bold flex items-center"><i class="fa-solid fa-users-gear mr-2"></i> Ngày 3: Xây Dựng Đội Ngũ & Văn Hóa Linh Hoạt</h3>
+                        <span class="text-sm bg-white/20 px-3 py-1 rounded-full">People & Culture</span>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                        <div class="md:w-3/5 space-y-4">
+                            <h4 class="font-bold text-gray-800 border-b pb-2">Nội dung chuyên đề:</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• <strong>Thấu cảm đội ngũ:</strong> Dùng App để thu thập và phân tích cảm xúc nhân viên, phát hiện "vùng trũng".</li>
+                                <li>• <strong>Huấn luyện nhân sự:</strong> Tạo lộ trình đào tạo cá nhân hóa (Personalized Learning) để nhân viên thích ứng nhanh.</li>
+                                <li>• Role-play thực hành xử lý sự kháng cự.</li>
+                            </ul>
+                             <div class="bg-blue-50 p-3 rounded text-sm text-blue-800">
+                                <strong>Giá trị:</strong> Xây dựng đội ngũ đồng lòng, biến sự kháng cự thành động lực đổi mới.
+                            </div>
+                        </div>
+                        <div class="md:w-2/5">
+                            <div class="ai-kit-card p-5 rounded-lg h-full flex flex-col justify-center">
+                                <div class="text-green-600 font-bold mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-gift"></i> AI KIT MANG VỀ:
+                                </div>
+                                <ul class="space-y-3 text-sm text-gray-700">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>App "Voice of Employee":</strong> AppSheet dựng sẵn (trên mobile) để nhân viên gửi sáng kiến/ẩn ức.</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Prompt "Difficult Conversation":</strong> Kịch bản đối thoại với nhân viên chống đối (Role-play với Gemini).</div>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                                        <div><strong>Template "Team Charter 4.0":</strong> Hiến pháp đội nhóm linh hoạt trên Docs.</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL / CTA -->
+    <section class="bg-hsu-blue py-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl font-bold mb-8">Lãnh Đạo Thời 4.0: Không Cần Đoán, Hãy Dùng Dữ Liệu</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10 text-blue-100">
+                Khóa học duy nhất trang bị "Tham mưu ảo" giúp bạn ra quyết định chính xác trong môi trường biến động. <br>
+                Sáng học tại lớp - Chiều áp dụng ngay tại doanh nghiệp.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 text-left max-w-4xl mx-auto mb-12">
+                 <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">3 Ngày</div>
+                    <div class="text-sm">Huấn luyện chuyên sâu & Thực chiến</div>
+                 </div>
+                 <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">Google Eco</div>
+                    <div class="text-sm">Hệ sinh thái công cụ miễn phí & mạnh mẽ</div>
+                 </div>
+                 <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/20">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">100%</div>
+                    <div class="text-sm">Học viên có sản phẩm mang về</div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section id="register" class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-hsu-blue mb-6">Đăng Ký Tư Vấn Khóa Học</h2>
+                <p class="text-gray-600 mb-8">Để lại thông tin để nhận Brochure chi tiết và demo bộ công cụ "Decision Matrix AI" miễn phí.</p>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Họ và Tên</label>
+                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-hsu-blue" placeholder="Nguyễn Văn A">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Email Công Việc</label>
+                        <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-hsu-blue" placeholder="email@company.com">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Số Điện Thoại</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-hsu-blue" placeholder="0909 xxx xxx">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2">Vị trí hiện tại</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-hsu-blue">
+                            <option>CEO / Chủ doanh nghiệp</option>
+                            <option>Giám đốc bộ phận (C-level, Manager)</option>
+                            <option>Quản lý đội nhóm</option>
+                            <option>Khác</option>
+                        </select>
+                    </div>
+                    <button type="button" class="w-full bg-google-red text-white font-bold py-4 rounded-lg hover:bg-red-700 transition shadow-lg mt-4">
+                        GỬI ĐĂNG KÝ
+                    </button>
+                    <p class="text-xs text-center text-gray-500 mt-4">*Chúng tôi cam kết bảo mật thông tin của bạn.</p>
+                </form>
+            </div>
+            
+            <div class="md:w-1/2 bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Thông tin liên hệ</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-hsu-blue shadow-sm"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="font-bold text-gray-700">Địa điểm học</div>
+                            <div class="text-sm text-gray-600">Trụ sở chính Đại học Hoa Sen, Q.1, TP.HCM</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-hsu-blue shadow-sm"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="font-bold text-gray-700">Hotline</div>
+                            <div class="text-sm text-gray-600">028 7309 1991 (Ext: 111)</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-hsu-blue shadow-sm"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="font-bold text-gray-700">Email</div>
+                            <div class="text-sm text-gray-600">tuyensinh@hoasen.edu.vn</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t pt-6">
+                    <h4 class="font-bold text-gray-800 mb-2">Giảng viên & Chuyên gia</h4>
+                    <p class="text-sm text-gray-600 mb-4">Đội ngũ giảng viên là các Lãnh đạo cấp cao, Chuyên gia quản trị biến động và Google Certified Trainer, mang đến góc nhìn thực chiến nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-sm">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Đại Học Hoa Sen. All Rights Reserved.</p>
+            <p class="mt-2">Chương trình đào tạo ngắn hạn cao cấp - Viện Sau Đại Học & Lãnh Đạo.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
